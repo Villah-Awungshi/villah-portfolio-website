@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villah Awungshi - Creative Visionary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #8B5CF6;
+            --deep-purple: #6B46C1;
+            --dark-purple: #4C1D95;
+            --electric-yellow: #FDE047;
+            --bright-yellow: #FACC15;
+            --pure-white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --deep-black: #0F0F0F;
+            --soft-black: #1E1E1E;
+            --gradient-main: linear-gradient(135deg, #8B5CF6 0%, #6B46C1 50%, #4C1D95 100%);
+            --gradient-accent: linear-gradient(45deg, #FDE047 0%, #FACC15 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--pure-white);
+            background: var(--deep-black);
+            overflow-x: hidden;
+        }
+
+        /* Advanced Background Animation */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--gradient-main);
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--electric-yellow);
+            border-radius: 50%;
+            animation: float-particle 20s infinite linear;
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Glassmorphism Container */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Advanced Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--pure-white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-main);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-links a:hover::before {
+            left: 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--electric-yellow);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section with 3D Effect */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-3d-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-avatar {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid var(--electric-yellow);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.5);
+            animation: pulse-avatar 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-avatar {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 50px rgba(139, 92, 246, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 80px rgba(139, 92, 246, 0.8); }
+        }
+
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, #FDE047, #8B5CF6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .avatar-image::before {
+            content: '👨‍🎨';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            filter: drop-shadow(0 0 20px rgba(253, 224, 71, 0.5));
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: text-glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 50px rgba(253, 224, 71, 0.3);
+        }
+
+        @keyframes text-glow {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.2); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--pure-white);
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-purple);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+        }
+
+        .location {
+            font-size: 1.1rem;
+            color: var(--electric-yellow);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: var(--gradient-main);
+            color: var(--pure-white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-accent);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            color: var(--deep-black);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--electric-yellow);
+            color: var(--electric-yellow);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--electric-yellow);
+            color: var(--deep-black);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            animation: float-element 8s ease-in-out infinite;
+        }
+
+        .element-1 {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-accent);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            opacity: 0.3;
+        }
+
+        .element-2 {
+            width: 150px;
+            height: 150px;
+            background: var(--gradient-main);
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+            opacity: 0.2;
+        }
+
+        .element-3 {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-accent);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+            opacity: 0.4;
+        }
+
+        @keyframes float-element {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: var(--deep-black);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 4rem;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-accent);
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--off-white);
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .about-text .highlight {
+            color: var(--electric-yellow);
+            font-weight: 700;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 500px;
+            background: var(--gradient-main);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+
+        .about-avatar {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 40%, var(--electric-yellow), var(--primary-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            border: 5px solid var(--pure-white);
+            box-shadow: 0 0 50px rgba(253, 224, 71, 0.4);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 120px 0;
+            background: var(--soft-black);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .portfolio-item {
+            background: var(--deep-black);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-main);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .portfolio-item:hover::before {
+            opacity: 0.1;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(139, 92, 246, 0.2);
+        }
+
+        .portfolio-image {
+            height: 300px;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(253, 224, 71, 0.1) 50%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .portfolio-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 20px rgba(253, 224, 71, 0.5));
+        }
+
+        .portfolio-content {
+            padding: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--electric-yellow);
+            font-weight: 800;
+        }
+
+        .portfolio-content p {
+            color: var(--off-white);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            background: var(--gradient-main);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--pure-white);
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 120px 0;
+            background: var(--deep-black);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 3rem;
+            border-radius: 25px;
+            background: var(--soft-black);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-main);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-item:hover::before {
+            opacity: 0.1;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .skill-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 30px rgba(253, 224, 71, 0.3);
+        }
+
+        .skill-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--electric-yellow);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-item p {
+            color: var(--off-white);
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--gradient-main);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="15" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+
+        .contact-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 4rem auto 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4rem;
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--electric-yellow);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--pure-white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--electric-yellow);
+            box-shadow: 0 0 20px rgba(253, 224, 71, 0.3);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .submit-btn {
+            background: var(--gradient-accent);
+            color: var(--deep-black);
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-main);
+            transition: left 0.3s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 0;
+        }
+
+        .submit-btn:hover {
+            color: var(--pure-white);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(253, 224, 71, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-black);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 4rem 0;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pure-white);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-accent);
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .social-link:hover::before {
+            transform: scale(1);
+        }
+
+        .social-link:hover {
+            color: var(--deep-black);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-avatar {
+                width: 150px;
+                height: 150px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--deep-black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-main);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gradient-accent);
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-animation {
+            width: 100px;
+            height: 100px;
+            border: 5px solid rgba(139, 92, 246, 0.3);
+            border-top: 5px solid var(--electric-yellow);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-animation"></div>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="background-animation" id="background"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Villah Awungshi</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-3d-container">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+            
+            <div class="hero-content">
+                <div class="hero-avatar">
+                    <div class="avatar-image"></div>
+                </div>
+                <h1>Villah Awungshi</h1>
+                <div class="hero-subtitle">Creative Visionary & Digital Innovator</div>
+                <div class="hero-description">Fashion • Technology • Cinema • Design</div>
+                <div class="location">📍 Manipur, India</div>
+                <div class="cta-buttons">
+                    <a href="#portfolio" class="cta-button">Explore My Work</a>
+                    <a href="#contact" class="cta-button secondary">Let's Collaborate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">About Me</h2>
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <p>Hello! I'm <span class="highlight">Villah Awungshi</span>, a passionate creative professional who bridges the gap between traditional artistry and cutting-edge technology. Based in the culturally rich state of Manipur, India, I bring a unique perspective to every project I undertake.</p>
+                    
+                    <p>My journey spans across <span class="highlight">fashion design</span>, where I blend traditional Manipuri aesthetics with contemporary global trends, <span class="highlight">technology innovation</span>, creating digital solutions that solve real-world problems, and <span class="highlight">cinematic storytelling</span>, where I craft visual narratives that resonate with diverse audiences.</p>
+                    
+                    <p>What sets me apart is my ability to see connections where others see boundaries. I believe that the future belongs to those who can seamlessly integrate creativity with technology, tradition with innovation, and local culture with global impact.</p>
+                </div>
+                <div class="about-visual animate-on-scroll">
+                    <div class="about-avatar">🎨</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">My Creative Universe</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item animate-on-scroll">
+                    <div class="portfolio-image">
+                        <div style="text-align: center;">
+                            <div class="portfolio-icon">👗</div>
+                            <div style="font-size: 1.5rem; font-weight: 700;">Fashion Revolution</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Fashion & Cultural Fusion</h3>
+                        <p>Revolutionary fashion designs that celebrate Manipuri heritage while embracing global trends. Each piece tells a story, bridging generations and cultures through innovative textile work and contemporary silhouettes.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Haute Couture</span>
+                            <span class="tag">Cultural Heritage</span>
+                            <span class="tag">Sustainable Fashion</span>
+                            <span class="tag">Textile Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll">
+                    <div class="portfolio-image">
+                        <div style="text-align: center;">
+                            <div class="portfolio-icon">🚀</div>
+                            <div style="font-size: 1.5rem; font-weight: 700;">Tech Innovation</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Digital Solutions & AI</h3>
+                        <p>Cutting-edge technology projects that leverage AI, machine learning, and advanced web technologies. From mobile applications to complex enterprise solutions, creating digital experiences that transform industries.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">Full-Stack Development</span>
+                            <span class="tag">Mobile Apps</span>
+                            <span class="tag">Cloud Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll">
+                    <div class="portfolio-image">
+                        <div style="text-align: center;">
+                            <div class="portfolio-icon">🎬</div>
+                            <div style="font-size: 1.5rem; font-weight: 700;">Cinematic Mastery</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Film & Visual Storytelling</h3>
+                        <p>Award-winning cinematic projects that explore human emotions and social themes. From concept to post-production, crafting compelling narratives that challenge perspectives and inspire change.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Film Direction</span>
+                            <span class="tag">Cinematography</span>
+                            <span class="tag">Post-Production</span>
+                            <span class="tag">Documentary</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll">
+                    <div class="portfolio-image" style="background: linear-gradient(45deg, #FDE047, #8B5CF6);">
+                        <div style="text-align: center;">
+                            <div class="portfolio-icon">🎨</div>
+                            <div style="font-size: 1.5rem; font-weight: 700;">Brand Universe</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Brand Design & Strategy</h3>
+                        <p>Comprehensive brand identities that resonate with target audiences while staying true to core values. From startups to established companies, creating memorable brand experiences across all touchpoints.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Brand Strategy</span>
+                            <span class="tag">Visual Identity</span>
+                            <span class="tag">Digital Marketing</span>
+                            <span class="tag">Art Direction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll">
+                    <div class="portfolio-image" style="background: linear-gradient(45deg, #6B46C1, #FDE047);">
+                        <div style="text-align: center;">
+                            <div class="portfolio-icon">🌐</div>
+                            <div style="font-size: 1.5rem; font-weight: 700;">Digital Experiences</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Interactive & UX Design</h3>
+                        <p>Immersive digital experiences that combine stunning visuals with intuitive functionality. Creating user interfaces that not only look amazing but also provide seamless user journeys.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">UX/UI Design</span>
+                            <span class="tag">Interactive Design</span>
+                            <span class="tag">3D Visualization</span>
+                            <span class="tag">Motion Graphics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item animate-on-scroll">
+                    <div class="portfolio-image" style="background: linear-gradient(45deg, #4C1D95, #FDE047);">
+                        <div style="text-align: center;">
+                            <div class="portfolio-icon">🏆</div>
+                            <div style="font-size: 1.5rem; font-weight: 700;">Award-Winning</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Recognition & Achievements</h3>
+                        <p>International recognition for excellence in creative work across multiple disciplines. Featured in prestigious galleries, tech conferences, and film festivals worldwide.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">International Awards</span>
+                            <span class="tag">Gallery Exhibitions</span>
+                            <span class="tag">Speaking Engagements</span>
+                            <span class="tag">Media Features</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Expertise & Mastery</h2>
+            <div class="skills-grid">
+                <div class="skill-item animate-on-scroll">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Creative Design</h3>
+                    <p>Fashion Design • Visual Arts • Brand Identity • Typography • Color Theory</p>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <div class="skill-icon">💻</div>
+                    <h3>Technology Stack</h3>
+                    <p>Full-Stack Development • AI/ML • Cloud Computing • Mobile Development</p>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <div class="skill-icon">🎬</div>
+                    <h3>Media Production</h3>
+                    <p>Film Direction • Cinematography • Video Editing • Motion Graphics</p>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <div class="skill-icon">🚀</div>
+                    <h3>Innovation</h3>
+                    <p>Strategic Thinking • Problem Solving • Team Leadership • Project Management</p>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Social Media Strategy • Content Creation • SEO/SEM • Analytics</p>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <div class="skill-icon">🎯</div>
+                    <h3>Business Strategy</h3>
+                    <p>Market Analysis • Brand Positioning • Growth Hacking • Investor Relations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title" style="color: white;">Let's Create Something Amazing</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9;">Ready to bring your vision to life? Let's collaborate and make magic happen!</p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project Type</label>
+                        <select id="project" name="project" style="width: 100%; padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 15px; background: rgba(255, 255, 255, 0.1); color: var(--pure-white); font-size: 1rem;">
+                            <option value="">Select project type</option>
+                            <option value="fashion">Fashion Design</option>
+                            <option value="tech">Technology Development</option>
+                            <option value="film">Film & Media Production</option>
+                            <option value="brand">Brand Design</option>
+                            <option value="digital">Digital Experience</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Project Budget</label>
+                        <select id="budget" name="budget" style="width: 100%; padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 15px; background: rgba(255, 255, 255, 0.1); color: var(--pure-white); font-size: 1rem;">
+                            <option value="">Select budget range</option>
+                            <option value="5k-15k">$5K - $15K</option>
+                            <option value="15k-50k">$15K - $50K</option>
+                            <option value="50k-100k">$50K - $100K</option>
+                            <option value="100k+">$100K+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell me about your vision, goals, and timeline..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Start Our Journey Together</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-link" onclick="alert('LinkedIn: Connect with me professionally')">💼</a>
+                <a href="#" class="social-link" onclick="alert('Instagram: Follow my creative journey')">📸</a>
+                <a href="#" class="social-link" onclick="alert('Twitter: Join the conversation')">🐦</a>
+                <a href="#" class="social-link" onclick="alert('Email: villah@example.com')">✉️</a>
+                <a href="#" class="social-link" onclick="alert('YouTube: Watch my content')">📺</a>
+            </div>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">&copy; 2025 Villah Awungshi. All rights reserved.</p>
+            <p style="opacity: 0.7;">Crafted with ❤️ in Manipur, India | Impacting the world through creativity</p>
+        </div>
+    </footer>
+
+    <script>
+        // Particle Background Animation
+        function createParticles() {
+            const background = document.getElementById('background');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 20 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                background.appendChild(particle);
+            }
+        }
+
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            loading.style.opacity = '0';
+            setTimeout(() => {
+                loading.style.display = 'none';
+                createParticles();
+                initScrollAnimations();
+            }, 1000);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 15, 0.98)';
+                header.style.borderBottom = '1px solid rgba(139, 92, 246, 0.5)';
+            } else {
+                header.style.background = 'rgba(15, 15, 15, 0.95)';
+                header.style.borderBottom = '1px solid rgba(139, 92, 246, 0.3)';
+            }
+        });
+
+        // Scroll Animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Advanced Form Handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                submitBtn.textContent = '✅ Message Sent!';
+                submitBtn.style.background = 'var(--gradient-accent)';
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.background = '';
+                    this.reset();
+                }, 3000);
+                
+                // Show success message
+                alert(`Thank you ${data.name}! Your message has been received. I'll get back to you within 24 hours regarding your ${data.project} project.`);
+            }, 2000);
+        });
+
+        // Dynamic Typography Effect
+        const heroTitle = document.querySelector('.hero h1');
+        if (heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            setTimeout(typeWriter, 1500);
+        }
+
+        // Interactive Cursor Effect
+        document.addEventListener('mousemove', function(e) {
+            const cursor = document.createElement('div');
+            cursor.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: var(--electric-yellow);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                left: ${e.clientX}px;
+                top: ${e.clientY}px;
+                animation: fade-out 1s ease-out forwards;
+            `;
+            
+            document.body.appendChild(cursor);
+            
+            setTimeout(() => {
+                cursor.remove();
+            }, 1000);
+        });
+
+        // Add fade-out animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade-out {
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0.5); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Portfolio Item Hover Effects
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02) rotateY(5deg)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
+            });
+        });
+
+        // Skills Animation on Scroll
+        const skillItems = document.querySelectorAll('.skill-item');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = '1';
+                    }, index * 200);
+                }
+            });
+        });
+
+        skillItems.forEach(item => {
+            item.style.transform = 'translateY(50px)';
+            item.style.opacity = '0';
+            item.style.transition = 'all 0.6s ease';
+            skillObserver.observe(item);
+        });
+
+        // Advanced Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-element');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = (index + 1) * 0.2;
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+
+        // Contact Form Enhancements
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-5px)';
+                this.parentElement.style.transition = 'transform 0.3s ease';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Performance Optimization
+        let ticking = false;
+        function updateAnimations() {
+            // Batch DOM updates here
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateAnimations);
+                ticking = true;
+            }
+        });
+
+        console.log('🎨 Welcome to Villah Awungshi\'s Creative Universe! 🚀');
+        console.log('This portfolio showcases the perfect blend of creativity and technology.');
+    </script>
+</body>
+</html>
